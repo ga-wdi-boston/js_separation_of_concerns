@@ -36,3 +36,17 @@ We can think of the first concern as a "model" concern; that is, a concern about
 Since we're using `browserify`, separating our code into different files is easy. All we have to do is create separate files for each concern and then move our code into the appropriate place.
 
 We'll be presented with an opportunity to observe another refactoring, this time with an eye toward improving readability and keeping like-code together.
+
+## Bonus Practice
+
+1. Clone this repo to a new folder: `git clone <this_repo> todo` (do not fork)
+1. Change into the project: `cd todo`
+1. Switch to the solution branch: `git checkout solution`
+1. Delete the master branch: `git branch -d master`
+1. Create a new master: `git checkout -b master`
+1. Delete the solution branch: `git branch -d solution`
+
+Now you have a fresh new repo based on the solution to this repo. Your task is to modify the current app by:
+
+1. Adding checkboxes to the list items
+1. Change the style of the list items to strike-through when the boxes are checked
