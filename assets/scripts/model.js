@@ -14,6 +14,4 @@ var queryDom = function () {
   };
 };
 
-$(document).ready(function () {
-  module.exports = queryDom();
-});
+module.exports = queryDom();

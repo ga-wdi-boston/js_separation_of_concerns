@@ -2,27 +2,14 @@
 
 var $ = require('jquery');
 
-var queryDom = function () {
+module.exports.addToList = function(list) {
   var $newLi = $('<li>');
   var $newItemText = $('#new-thing');
 
-  return {
-    $newLi: $newLi,
-    $newLiText: $newItemText
-  };
+  $newLi.html($newItemText.val());
+  $newItemText.val('');
+
+  if ($newLi.html() !== '') {
+    list.append($newLi);
+  }
 };
-
-$(document).ready(function () {
-  module.exports = queryDom();
-
-  module.exports.addToList = function(list) {
-    this.$newLi.html(this.$newLiText.val());
-    this.$newLiText.val('');
-
-    if (this.$newLi.html() !== '') {
-      list.append(this.$newLi);
-    }
-  };
-});
-
-
