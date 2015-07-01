@@ -1,6 +1,6 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-# Javascript: Introduction to jQuery
+# Javascript: Separation of Concerns
 
 ## Objectives
 
