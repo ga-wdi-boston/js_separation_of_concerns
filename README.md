@@ -6,8 +6,7 @@
 
 By the end of this lesson, students should be able to:
 
-* Substitute jQuery methods for vanilla JS DOM manipulation methods
-* Reference jQuery documentation when learning a new technique
+* Organize JavaScript code based on model and view responsibilities
 
 ## Instructions
 
@@ -15,29 +14,25 @@ By the end of this lesson, students should be able to:
 1. Change into the project directory.
 1. Follow your instructor's instructions.
 
+## Separation of Concerns
+
+> In computer science, separation of concerns (SoC) is a design principle for separating a computer program into distinct sections, such that each section addresses a separate concern... A program that embodies SoC well is called a modular program. Modularity, and hence separation of concerns, is achieved by encapsulating information inside a section of code that has a well-defined interface...
+>
+> The value of separation of concerns is simplifying development and maintenance of computer programs. When concerns are well-separated, individual sections can be reused, as well as developed and updated independently. Of special value is the ability to later improve or modify one section of code without having to know the details of other sections, and without having to make corresponding changes to those sections.
+>
+> [Separation of concerns - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Separation_of_concerns)
+
 ## Exercise
 
-The code provided in this repo is a simple list-keeping app. We worked through this code yesterday, reading and annotating to get a better idea of how the app worked.
+The code provided in this repo is a simple list-keeping app. We just refactored our code to use jQuery instead of vanilla JavaScript.
 
-You may either follow along as I refactor this code to use jQuery, or you may focus on taking notes. The app will be available in its jQuery implementation on another branch.
+We have two concerns in this app:
 
-Our general approach will be:
+* Code that deals with retrieving data from the DOM
+* Code that renders a new item on our list
 
-1. `npm install` to install dependencies.
-1. `grunt browserify` to put all of our JS in one file (this will be important later).
-1. Change our application code to use jQuery. When we don't know how to do something, we'll first Google for a hint and the check the jQuery documentation.
-1. `grunt browserify` and refresh the page each time we want see our changes.
-1. Commit our changes when we've finished.
+We can think of the first concern as a "model" concern; that is, a concern about how we describe the data structure we're working with. The second is best thought of as a "view" concern, since it deals with what is shown to the user, in this case, interactively.
 
-## Notes
+Since we're using `browserify`, separating our code into different files is easy. All we have to do is create separate files for each concern and then move our code into the appropriate place.
 
-When reading the jQuery documentation, be sure to scroll through the whole document to ensure you're looking at the correct method signature. Most jQuery methods change their behavior depending on the number of arguments they have when called.
-
-For example, have a look at [.val()](https://api.jquery.com/val/). Note in the table of contents that there are two method signatures, `.val()` and `.val(value)`. This is our hint that `.val()` can do two things.
-
-Reading the documentation, we discover that `.val()` is getter on an element, but that `.val(value)` is a setter on an element. Be sure you're using the correct method. Reading examples is very helpful, and the jQuery examples in the docs are fully functional!
-
-## Additional Resources
-
-* [JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [jQuery API Documentation](https://api.jquery.com/)
+We'll be presented with an opportunity to observe another refactoring, this time with an eye toward improving readability and keeping like-code together.
